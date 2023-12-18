@@ -23,13 +23,19 @@ body {
     cursor: pointer;
 }
 
-.circle-scroll-bar svg {
-    width: 380px;
-    border-radius: 50%;
+.circle-scroll-bar{
     position: absolute;
-    left: 62%;
     top: 7%;
+    left: 28%;
+    border-radius: 50%;
+    width: 380px;
+    z-index: 1;
+}
+
+.circle-scroll-bar svg {
     background-color: #6411A9;
+    border-radius: 50%;
+    
 }
 
 .circle-scroll-bar svg .transrgwht {
@@ -38,7 +44,7 @@ body {
 
 
 @media only screen and (max-width: 768px) {
-    .circle-scroll-bar {
+    .circle-scroll-bar, .chat-btn {
          display: none;
     }
 }

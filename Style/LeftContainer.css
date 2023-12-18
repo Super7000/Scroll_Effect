@@ -12,6 +12,7 @@
     top: 27%;
     right: -3%;
     font-size: 1.5rem;
+    z-index: 2;
 }
 
 .main-heading-text {
@@ -38,11 +39,15 @@
     position: absolute;
     bottom: 5%;
     left: 8%;
-    width: 48%;
+    width: 55%;
 }
 
-.sub-heading img {
-    width: 100%;
+.left-container .achivement {
+    width: 45%;
+    position: relative;
+    top: 50%;
+    left: 8%;
+    z-index: 3;
 }
 
 .sub-heading-text {
@@ -66,7 +71,7 @@
 .sub-heading .view-case-container img {
     width: 30px;
     position: relative;
-    left: -60%;
+    left: -40%;
     top: 2px;
 }
 
@@ -74,7 +79,8 @@
     font-size: 20px;
     position: absolute;
     right: 60px;
-    bottom: 30px;
+    bottom: 5%;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
@@ -84,4 +90,21 @@
         position: absolute;
         top: 50%;
     }   
+    .main-heading, .bottom-part{
+        display: none;
+    }
+    .sub-heading{
+        width: 95%;
+        left: 5%;
+        bottom: 12%;
+    }
+    .left-container .achivement{
+        width: 70%;
+        border: 5px solid #6411A9;
+        border-radius: 13px;
+        position: relative;
+        top: -10%;
+        left: 5%;
+        background-color: white;
+    }
 }
