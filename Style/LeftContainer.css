@@ -4,7 +4,39 @@
     position: absolute;
     left: 0;
     top: 0;
-    background: #6411A9;
+}
+
+.text-wrapper {
+    overflow: hidden;
+}
+
+.text-wrapper div {
+    transition: 0.5s;
+}
+
+@keyframes top-to-mid {
+    0% {
+        position: relative;
+        top: -70px;
+    }
+
+    100% {
+        position: relative;
+        top: 0px;
+    }
+}
+
+@keyframes down-to-mid {
+    0% {
+        position: relative;
+        top: 70px;
+    }
+
+    100% {
+        position: relative;
+        top: 0;
+    }
+
 }
 
 .main-heading {
@@ -21,7 +53,7 @@
 }
 
 .main-heading img {
-    display: none;
+    height: 70px;
 }
 
 .bottom-right-heading {
@@ -84,22 +116,32 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .left-container{
+    .left-container {
         width: 100%;
         height: 50%;
         position: absolute;
         top: 50%;
-    }   
-    .main-heading, .bottom-part{
+    }
+
+    .bg {
+        width: 100%;
+        height: 50%;
+        top: 50%;
+    }
+
+    .main-heading,
+    .bottom-part {
         display: none;
     }
-    .sub-heading{
+
+    .sub-heading {
         width: 95%;
         left: 5%;
         bottom: 12%;
     }
-    .left-container .achivement{
-        width: 70%;
+
+    .left-container .achivement {
+        width: 65%;
         border: 5px solid #6411A9;
         border-radius: 13px;
         position: relative;

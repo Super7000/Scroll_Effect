@@ -23,7 +23,17 @@ body {
     cursor: pointer;
 }
 
-.circle-scroll-bar{
+.bg {
+    background: #6411A9;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 44%;
+    height: 100vh;
+    transition: 1s;
+}
+
+.circle-scroll-bar {
     position: absolute;
     top: 7%;
     left: 28%;
@@ -35,16 +45,32 @@ body {
 .circle-scroll-bar svg {
     background-color: #6411A9;
     border-radius: 50%;
-    
+    transition: 1s;
+
 }
 
 .circle-scroll-bar svg .transrgwht {
     transition: 0.3s;
 }
 
+.tab {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.tab.active {
+    opacity: 1;
+}
+
 
 @media only screen and (max-width: 768px) {
-    .circle-scroll-bar, .chat-btn {
-         display: none;
+
+    .circle-scroll-bar,
+    .chat-btn {
+        display: none;
     }
 }
