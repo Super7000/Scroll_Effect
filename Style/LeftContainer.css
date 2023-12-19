@@ -13,13 +13,18 @@
 .text-wrapper div,
 .text-wrapper img {
     transition: 0.5s;
-    transform: translate(0, 100%);
+    transform: translate(0, 110%);
 }
 
 .tab.active .text-wrapper div,
 .tab.active .text-wrapper img {
-    transform: translate(0, 0%);
+    transform: translate(0, 0%) !important;
 
+}
+
+.tab.reverse .text-wrapper div,
+.tab.reverse .text-wrapper img {
+    transform: translate(0, -110%);
 }
 
 .main-heading {
@@ -68,16 +73,19 @@
     width: 100%;
     background-color: white;
     border-radius: 13px;
-    transform: translate(0, 100%);
+    opacity: 0;
 }
-
 .tab7 .achivement-container .achivement {
     background-color: transparent;
     border-radius: 0;
 }
 
 .tab.active .achivement-container .achivement {
-    transform: translate(0, 0);
+    opacity: 1 !important;
+}
+
+.tab.reverse .achivement-container .achivement {
+    opacity: 0;
 }
 
 .sub-heading-text {
@@ -93,6 +101,7 @@
 .sub-heading .view-case-container {
     margin-top: 50px;
     font-size: 10px;
+    opacity: 0;
     display: grid;
     grid-auto-flow: column;
     justify-content: start;
@@ -100,6 +109,9 @@
     gap: 10px;
     cursor: pointer;
     transition: 0.5s;
+}
+.tab.active .sub-heading .view-case-container {
+    opacity: 1;
 }
 
 .tab.active .sub-heading .view-case-container {
@@ -116,17 +128,18 @@
 .coming-soon-container {
     margin-top: 50px;
     font-size: 10px;
-    opacity: 0.5;
     transition: 0.5s;
     display: grid;
     grid-auto-flow: column;
     justify-content: start;
     align-items: center;
     gap: 10px;
+    opacity: 0;
 }
 
 .tab.active .coming-soon-container {
     font-size: 20px;
+    opacity: 0.5;
 }
 
 .bottom-part {

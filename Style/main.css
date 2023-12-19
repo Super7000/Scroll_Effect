@@ -58,15 +58,11 @@ body {
 .tab {
     width: 100%;
     height: 100%;
-    opacity: 0;
     position: absolute;
     right: 0;
     top: 0;
 }
 
-.tab.active {
-    opacity: 1;
-}
 
 .dotted-progress-bar {
     position: absolute;

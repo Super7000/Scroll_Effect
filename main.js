@@ -17,8 +17,12 @@ function main(prevTab = currentTab) {
         document.querySelector(".tabs-container").style.cssText += `left: -${window.innerWidth * (currentTab - 1)}px;`
     } else {
         //Activating tabs for PC
+        if (prevTab < currentTab)
+            document.querySelector(".tab.active").classList.add("reverse");
         document.querySelector(".tab.active").classList.remove("active");
         document.querySelector(".tab" + currentTab).classList.add("active");
+        if (prevTab > currentTab)
+            document.querySelector(".tab" + currentTab).classList.remove("reverse");
 
     }
 
@@ -91,6 +95,53 @@ function changeUI() {
 
 
 
+window.onresize = () => {
+    main();
+    changeUI();
+    autoScrollFunction();
+    showProgressForMobile();
+};
+
+
+
+let wait = false;
+document.querySelector("body").addEventListener("wheel", (event) => {
+    if (wait == true) return;
+    wait = true;
+    let prevTab = currentTab;
+    if (event.deltaY > 0 && currentTab < 7) { //Scroll Down condition 
+        currentTab++;
+    }
+    else if (event.deltaY < 0 && currentTab > 1) { //Scroll Up condition
+        currentTab--;
+    }
+    main(prevTab);
+    showProgressForMobile();
+    setTimeout(() => {
+        wait = false;
+    }, 500)
+
+})
+
+
+
+document.querySelectorAll(".dotted-progress-bar div").forEach((e) => {
+    e.addEventListener("click", () => {
+        let prevTab = currentTab;
+        currentTab = parseInt((e.classList[0].toString())[3]);
+        main(prevTab);
+        showProgressForMobile();
+    })
+})
+
+
+
+showProgressForMobile();
+autoScrollFunction();
+changeUI();
+
+
+
 //Swipe Function for Mobile
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
@@ -146,53 +197,6 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
-
-
-
-window.onresize = () => {
-    main();
-    changeUI();
-    autoScrollFunction();
-    showProgressForMobile();
-};
-
-
-
-let wait = false;
-document.querySelector("body").addEventListener("wheel", (event) => {
-    if (wait == true) return;
-    wait = true;
-    let prevTab = currentTab;
-    if (event.deltaY > 0 && currentTab < 7) { //Scroll Down condition 
-        currentTab++;
-    }
-    else if (event.deltaY < 0 && currentTab > 1) { //Scroll Up condition
-        currentTab--;
-    }
-    main(prevTab);
-    showProgressForMobile();
-    setTimeout(() => {
-        wait = false;
-    }, 500)
-
-})
-
-
-
-document.querySelectorAll(".dotted-progress-bar div").forEach((e) => {
-    e.addEventListener("click", () => {
-        let prevTab = currentTab;
-        currentTab = parseInt((e.classList[0].toString())[3]);
-        main(prevTab);
-        showProgressForMobile();
-    })
-})
-
-
-
-showProgressForMobile();
-autoScrollFunction();
-changeUI();
 
 
 

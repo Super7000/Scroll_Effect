@@ -5,6 +5,11 @@
     right: 0;
     top: 0;
     overflow: hidden;
+    opacity: 0;
+}
+
+.tab.active .right-container{
+    opacity: 1;
 }
 
 
@@ -490,31 +495,4 @@
         right: 1%;
     }
 
-    @keyframes left-to-mid {
-        0% {
-            position: fixed;
-            left: -100%;
-            opacity: 1;
-        }
-
-        100% {
-            position: fixed;
-            left: 0%;
-            opacity: 1;
-        }
-    }
-
-    @keyframes right-to-mid {
-        0% {
-            position: fixed;
-            left: 100%;
-            opacity: 1;
-        }
-
-        100% {
-            position: fixed;
-            left: 0;
-            opacity: 1;
-        }
-    }
 }
