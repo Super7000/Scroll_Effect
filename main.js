@@ -137,7 +137,7 @@ document.querySelectorAll(".dotted-progress-bar div").forEach((e) => {
 
 
 showProgressForMobile();
-autoScrollFunction();
+// autoScrollFunction();
 changeUI();
 
 
