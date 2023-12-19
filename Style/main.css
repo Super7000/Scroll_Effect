@@ -21,6 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index: 10;
 }
 
 .bg {
@@ -115,7 +116,7 @@ body {
         display: grid;
         grid-auto-flow: column;
         gap: 0;
-        transition: 1s;
+        transition: 0.5s;
     }
 
     .dotted-progress-bar {

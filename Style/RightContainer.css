@@ -70,21 +70,21 @@
 .tab2 .right-container img:nth-child(1) {
     position: absolute;
     bottom: -50%;
-    left: 15%;
+    right: 50%;
 }
 
 .tab2 .right-container img:nth-child(2) {
     position: absolute;
-    left: 55%;
+    right: 3%;
     top: -50%;
 }
 
 .tab2.active .right-container img:nth-child(1) {
-    bottom: -5%;
+    bottom: -8%;
 }
 
 .tab2.active .right-container img:nth-child(2) {
-    top: -10%;
+    top: -20%;
 }
 
 
@@ -100,7 +100,7 @@
 .tab3 .right-container img:nth-child(1) {
     width: 38%;
     position: absolute;
-    left: 15%;
+    right: 40%;
     bottom: -50%;
 }
 
@@ -108,7 +108,7 @@
     width: 31%;
     position: absolute;
     top: -50%;
-    left: 55%;
+    right: 5%;
 }
 
 .tab3.active .right-container img:nth-child(1) {
@@ -135,7 +135,7 @@
     width: 45%;
     position: absolute;
     left: -50%;
-    top: -75px;
+    top: -10%;
 }
 
 .tab4.active .right-container img:nth-child(1) {
@@ -161,13 +161,13 @@
 }
 
 .tab4.active .right-container img:nth-child(3) {
-    top: -130px;
+    top: -20%;
 }
 
 .tab4 .right-container img:nth-child(4) {
     position: absolute;
     bottom: -100%;
-    left: 60px;
+    left: 7%;
     width: 28%;
 }
 
@@ -179,11 +179,28 @@
     width: 45%;
     position: absolute;
     right: -50%;
-    bottom: -80px;
+    bottom: -15%;
 }
 
 .tab4.active .right-container img:nth-child(5) {
-    right: -50px;
+    right: -6%;
+    z-index: 2;
+}
+
+.tab4 .right-container img:nth-child(6) {
+    position: absolute;
+    width: 28%;
+    left: 52%;
+    bottom: -24%;
+    display: none;
+}
+
+.tab4 .right-container img:nth-child(7) {
+    width: 20%;
+    position: absolute;
+    top: 40%;
+    right: -9%;
+    display: none;
 }
 
 
@@ -210,7 +227,7 @@
     display: grid;
     grid-auto-flow: row;
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     transition: 0.5s;
 }
@@ -351,6 +368,20 @@
         background-color: #6411A9;
     }
 
+    .tab1.active .right-container img {
+        transform: translate(0, 0);
+        width: 61%;
+        top: 15%;
+    }
+
+    .tab1.active .right-container img:nth-child(1) {
+        left: -5%;
+    }
+
+    .tab1.active .right-container img:nth-child(2) {
+        left: 44%
+    }
+
     .tab2 .left-container {
         background: linear-gradient(135deg, #C62BB2, #5826C7);
     }
@@ -359,12 +390,77 @@
         background-color: #0F113B;
     }
 
+    .tab2 .right-container img {
+        width: 45%;
+    }
+
+    .tab3.active .right-container img:nth-child(1) {
+        right: 47%;
+        bottom: -35%;
+        width: 58%;
+    }
+
+    .tab3.active .right-container img:nth-child(2) {
+        top: -27%;
+        right: 1%;
+        width: 47%;
+    }
+
     .tab4 .left-container {
         background-color: #17263C;
     }
 
+    .tab4 .right-container img:nth-child(2),
+    .tab4 .right-container img:nth-child(4),
+    .tab4 .right-container img:nth-child(6) {
+        width: 40%;
+    }
+
+    .tab4.active .right-container img:nth-child(2) {
+        top: -10%;
+        left: 46%;
+    }
+
+    .tab4.active .right-container img:nth-child(3) {
+        top: -32%;
+    }
+
+    .tab4.active .right-container img:nth-child(4) {
+        bottom: -20%;
+    }
+
+    .tab4.active .right-container img:nth-child(5) {
+        right: -30%
+    }
+
+    .tab4 .right-container img:nth-child(6) {
+        left: 46%;
+        display: block;
+    }
+
+    .tab4 .right-container img:nth-child(7) {
+        display: block;
+
+    }
+
     .tab5 .left-container {
         background-color: #124AA3;
+    }
+
+    .tab5 .right-container .sub-container {
+        grid-template-columns: 38% 38% 38%;
+        gap: 0;
+        left: 2%;
+    }
+
+    .tab5 .right-container .sub-container div:nth-child(1) {
+        gap: 0%;
+        top: -16%;
+    }
+
+    .tab5 .right-container .sub-container div:nth-child(2) {
+        gap: 0%;
+        top: -5%;
     }
 
     .tab6 .left-container {
@@ -373,6 +469,25 @@
 
     .tab7 .left-container {
         background-color: #01824D;
+    }
+
+    .tab7 .right-container img:nth-child(1) {
+        width: 68%;
+    }
+
+    .tab7 .right-container img:nth-child(2) {
+        width: 53%;
+
+    }
+
+    .tab7.active .right-container img:nth-child(1) {
+        bottom: -50%;
+        left: 0;
+    }
+
+    .tab7.active .right-container img:nth-child(2) {
+        bottom: -65%;
+        right: 1%;
     }
 
     @keyframes left-to-mid {
