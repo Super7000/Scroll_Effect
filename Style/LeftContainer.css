@@ -10,41 +10,25 @@
     overflow: hidden;
 }
 
-.text-wrapper div {
+.text-wrapper div,
+.text-wrapper img {
     transition: 0.5s;
+    transform: translate(0, 100%);
 }
 
-@keyframes top-to-mid {
-    0% {
-        position: relative;
-        top: -70px;
-    }
-
-    100% {
-        position: relative;
-        top: 0px;
-    }
-}
-
-@keyframes down-to-mid {
-    0% {
-        position: relative;
-        top: 70px;
-    }
-
-    100% {
-        position: relative;
-        top: 0;
-    }
+.tab.active .text-wrapper div,
+.tab.active .text-wrapper img {
+    transform: translate(0, 0%);
 
 }
 
 .main-heading {
     position: absolute;
-    top: 27%;
+    top: 25%;
     right: -3%;
     font-size: 1.5rem;
     z-index: 2;
+    transition: 0.5s;
 }
 
 .main-heading-text {
@@ -74,12 +58,28 @@
     width: 55%;
 }
 
-.left-container .achivement {
+.left-container .achivement-container {
     width: 45%;
     position: relative;
     top: 50%;
     left: 8%;
     z-index: 3;
+    overflow: hidden;
+}
+
+.achivement-container .achivement {
+    width: 100%;
+    background-color: white;
+    border-radius: 13px;
+    transform: translate(0, 100%);
+}
+
+.tab.active .achivement-container .achivement {
+    transform: translate(0, 0);
+}
+
+.tab7 .achivement {
+    max-height: 90px;
 }
 
 .sub-heading-text {
@@ -94,10 +94,15 @@
 
 .sub-heading .view-case-container {
     margin-top: 50px;
-    font-size: 20px;
+    font-size: 10px;
     display: grid;
     grid-auto-flow: column;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.tab.active .sub-heading .view-case-container {
+    font-size: 20px;
 }
 
 .sub-heading .view-case-container img {
@@ -105,6 +110,17 @@
     position: relative;
     left: -40%;
     top: 2px;
+}
+
+.coming-soon-container {
+    margin-top: 50px;
+    font-size: 10px;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.tab.active .coming-soon-container {
+    font-size: 20px;
 }
 
 .bottom-part {
@@ -115,11 +131,41 @@
     cursor: pointer;
 }
 
+.case-study-text {
+    display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1050px) {
+    .tab1 .main-heading-text {
+        font-size: 42px;
+    }
+
+    .tab5 .main-heading-text {
+        font-size: 55px;
+    }
+
+    .tab6 .main-heading-text {
+        font-size: 55px;
+    }
+
+    .sub-heading-text {
+        font-size: 45px;
+    }
+
+    .tab7 .sub-heading-text {
+        font-size: 36px;
+    }
+
+    .main-heading {
+        top: 21%;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .left-container {
         width: 100%;
         height: 50%;
-        position: absolute;
+        position: relative;
         top: 50%;
     }
 
@@ -135,18 +181,51 @@
     }
 
     .sub-heading {
-        width: 95%;
+        width: 100%;
         left: 5%;
         bottom: 12%;
     }
 
-    .left-container .achivement {
-        width: 65%;
-        border: 5px solid #6411A9;
-        border-radius: 13px;
+    .left-container .achivement-container {
+        width: 50%;
         position: relative;
         top: -10%;
         left: 5%;
-        background-color: white;
+    }
+
+    .tab1 .achivement-container .achivement {
+        border: 5px solid #6411A9;
+        width: 90%;
+    }
+
+    .tab7 .achivement {
+        max-height: 110px;
+    }
+
+    .coming-soon-container {
+        width: 78%;
+        opacity: 1;
+        display: grid;
+        grid-auto-flow: column;
+    }
+
+    .case-study-text {
+        display: block;
+    }
+
+    .coming-soon-container div:nth-child(2) {
+        padding: 7px 8px;
+        background: #fff;
+        color: #000;
+        border-radius: 50px;
+        position: relative;
+        top: -3.5px;
+        display: grid;
+        justify-content: center;
+    }
+
+    .tab2 .coming-soon-container div:nth-child(2) {
+        background-color: #FD2BA9;
+        color: #fff;
     }
 }
