@@ -494,12 +494,12 @@
     }
 
     .tab7.active .right-container img:nth-child(1) {
-        bottom: -50%;
+        top: 25px;
         left: 0;
     }
 
     .tab7.active .right-container img:nth-child(2) {
-        bottom: -65%;
+        top: 50px;
         right: 1%;
     }
 
