@@ -158,12 +158,12 @@
     transition: 0.3s;
 }
 
-.tab4 .right-container div img{
+.tab4 .right-container div img {
     width: 100%;
 }
 
 
-.tab4.active .right-container div{
+.tab4.active .right-container div {
     top: 10%;
 }
 
@@ -189,7 +189,7 @@
     bottom: -120px;
 }
 
-.tab4 .right-container .sliced-bread{
+.tab4 .right-container .sliced-bread {
     width: 45%;
     position: absolute;
     right: -50%;
@@ -425,11 +425,12 @@
         left: 5%;
     }
 
-    .tab4.active .right-container div{
+    .tab4.active .right-container div {
         width: 42%;
         top: -10%;
         left: 48%;
     }
+
     .tab4.active .right-container div .top-right-phone {
         top: 0%;
     }

@@ -63,6 +63,14 @@
     width: 55%;
 }
 
+.sub-heading.for-pc {
+    display: block;
+}
+
+.sub-heading.for-mobile {
+    display: none;
+}
+
 .left-container .achivement-container {
     width: 80%;
     z-index: 3;
@@ -75,6 +83,7 @@
     border-radius: 13px;
     opacity: 0;
 }
+
 .tab7 .achivement-container .achivement {
     background-color: transparent;
     border-radius: 0;
@@ -110,6 +119,7 @@
     cursor: pointer;
     transition: 0.5s;
 }
+
 .tab.active .sub-heading .view-case-container {
     opacity: 1;
 }
@@ -150,9 +160,6 @@
     cursor: pointer;
 }
 
-.case-study-text {
-    display: none;
-}
 
 @media (min-width: 768px) and (max-width: 1050px) {
     .tab1 .main-heading-text {
@@ -205,6 +212,14 @@
         bottom: 20%;
     }
 
+    .sub-heading.for-pc {
+        display: none;
+    }
+
+    .sub-heading.for-mobile {
+        display: block;
+    }
+
     .left-container .achivement-container {
         width: 70%;
         position: relative;
@@ -218,15 +233,12 @@
     }
 
 
-    .coming-soon-container, .tab.active .coming-soon-container {
+    .coming-soon-container,
+    .tab.active .coming-soon-container {
         width: 100%;
         opacity: 1;
         display: grid;
         grid-auto-flow: column;
-    }
-
-    .case-study-text {
-        display: block;
     }
 
     .coming-soon-container div:nth-child(2) {

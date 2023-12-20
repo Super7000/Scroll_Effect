@@ -1,5 +1,5 @@
 let currentTab = 1;
-function main(prevTab = currentTab) {
+function changeTab(prevTab = currentTab) {
     for (var i = 1; i <= currentTab; i++) {
         document.querySelector(".circle-scroll-bar svg #Dots" + i + " .dotsfill" + i).style.cssText += "fill: rgb(0, 146, 255);";
         document.querySelector(".circle-scroll-bar svg #Dots" + i + " .dotsstro" + i).style.cssText += "opacity: 1;";
@@ -63,7 +63,7 @@ function autoScrollFunction() {
             currentTab++;
             if (currentTab > 7) currentTab = 1;
             showProgressForMobile();
-            main(prevTab);
+            changeTab(prevTab);
         }, 2000)
     } else if (window.innerWidth > 768 && runing == true) {
         clearInterval(autoScroll)
@@ -96,7 +96,7 @@ function changeUI() {
 
 
 window.onresize = () => {
-    main();
+    changeTab();
     changeUI();
     autoScrollFunction();
     showProgressForMobile();
@@ -115,7 +115,7 @@ document.querySelector("body").addEventListener("wheel", (event) => {
     else if (event.deltaY < 0 && currentTab > 1) { //Scroll Up condition
         currentTab--;
     }
-    main(prevTab);
+    changeTab(prevTab);
     showProgressForMobile();
     setTimeout(() => {
         wait = false;
@@ -129,7 +129,7 @@ document.querySelectorAll(".dotted-progress-bar div").forEach((e) => {
     e.addEventListener("click", () => {
         let prevTab = currentTab;
         currentTab = parseInt((e.classList[0].toString())[3]);
-        main(prevTab);
+        changeTab(prevTab);
         showProgressForMobile();
     })
 })
@@ -183,7 +183,7 @@ function handleTouchMove(evt) {
             if (currentTab > 1)
                 currentTab--;
         }
-        main(prevTab);
+        changeTab(prevTab);
         showProgressForMobile();
 
     } else {
@@ -197,18 +197,3 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
-
-
-
-//Updateing Texts on scroll
-// function updateTextsForMobile(){
-// let texts = [
-//     ["", "25M+ Downloads", "on appstore & google playstore", "ABC 123", "We are the best web development<br> company in the world"],
-//     ["The Next Big", "Blockchain", "Revolution", "ABC 234", "We are the best web development<br> company in the world"],
-//     ["Powered by advamce", "", "Algorithms", "ABC 345", "We are the best<br> web development company<br> in the world"],
-//     ["Redefining", "UX Strategy", "and UI design", "ABC 456", "We are the best<br> web development company<br> in the world"],
-//     ["Text Headline", "Text Headline", "Footer Headline", "ABC 567", "We are the best AR<br> web development company<br> in the world"],
-//     ["Developing ERP Solution for", "Text Headline", "in furniture industry", "ABC 678", "Best since 2017<br> We offer wide range of<br> web development and app development"],
-//     ["Biggest Classified", "East Asia", "Countries", "ABC 23478", "We are the best<br> web development company<br> in the world"]
-// ];
-// }
