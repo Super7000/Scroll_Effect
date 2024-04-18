@@ -365,11 +365,6 @@
         left: 0;
     }
 
-    .tab {
-        transition: 0s;
-        width: 100%;
-    }
-
     .tab img {
         transition: 0s;
     }

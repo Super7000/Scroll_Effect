@@ -78,18 +78,12 @@ function changeUI() {
         document.querySelectorAll(".tab").forEach((e) => {
             e.classList.add("active")
         })
-        document.querySelectorAll(".tab").forEach((e) => {
-            e.style.cssText += `width: ${window.innerWidth}px`;
-        })
         document.querySelector(".tabs-container").style.cssText += `left: -${window.innerWidth * (currentTab - 1)}px;`
     } else {    //for PC
         document.querySelectorAll(".tab").forEach((e) => {
             e.classList.remove("active");
         })
         document.querySelector(".tab" + currentTab).classList.add("active")
-        document.querySelectorAll(".tab").forEach((e) => {
-            e.style.cssText += `width: 100%`;
-        })
     }
 }
 
